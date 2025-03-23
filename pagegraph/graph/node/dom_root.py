@@ -97,6 +97,11 @@ class DOMRootNode(ParentDOMElementNode, Reportable):
         graph structure. This is only used currently as another step of graph
         validation."""
         this_url = self.url()
+        
+        if not this_url:
+            return None
+
+        # print(this_url, security_origin_from_url(this_url))
         if this_url and (sec_origin := security_origin_from_url(this_url)):
             return sec_origin
         if parent_domroot_node := self.parent_domroot_node():

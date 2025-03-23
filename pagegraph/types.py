@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from enum import Enum, StrEnum
+from enum import Enum
 from typing import Set, Optional, TYPE_CHECKING, Union
 
 
@@ -125,7 +125,10 @@ class PageGraphInput:
     reverse_graph: NWX.MultiDiGraph
 
 
-class PartyFilterOption(StrEnum):
+class PartyFilterOption(Enum):
     NONE = "none"
     FIRST_PARTY = "first-party"
     THIRD_PARTY = "third-party"
+
+    def __str__(self):
+        return self.value

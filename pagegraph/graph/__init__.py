@@ -324,7 +324,9 @@ class PageGraph:
         return cast(list["ScriptLocalNode"], node_iterator)
 
     def html_nodes(self) -> list[HTMLNode]:
+        print(111111)
         node_iterator = self.nodes_of_type(Node.Types.HTML)
+        print(node_iterator)
         return cast(list["HTMLNode"], node_iterator)
 
     def parser_nodes(self) -> list[ParserNode]:
